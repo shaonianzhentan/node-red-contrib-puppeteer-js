@@ -1,0 +1,48 @@
+<script type="text/html" data-template-name="eval-js">
+  <div class="form-row">
+      <label for="node-input-name">名称</label>
+      <input type="text" id="node-input-name" placeholder="请输入名称">
+  </div>
+  <div class="form-row">
+    <label for="node-input-puppeteer">Puppeteer</label>
+    <select type="text" id="node-input-puppeteer" placeholder="请选择Puppeteer"></select>
+  </div>
+  <div class="form-row">
+      <label for="node-input-url">URL</label>
+      <input type="url" id="node-input-url" placeholder="请输入要访问的URL地址">
+  </div>
+  <div class="form-row">
+      <label for="node-input-js">JavaScript</label>
+      <textarea id="node-input-js" style="width:100%;" rows="15" placeholder="请输入要执行的JavaScript代码"></textarea>
+  </div>
+  <div class="form-row">
+    <label for="node-input-screenshot">
+      screenshot
+    </label>
+    <label style="width: 70%;">
+      <input type="checkbox" id="node-input-screenshot" style="display:inline-block; width:22px; vertical-align:top;" autocomplete="off"/>
+      <span style="user-select: none;">截图输出base64字符串</span>
+    </label>      
+  </div>
+</script>
+<script type="text/javascript">
+  RED.nodes.registerType('eval-js', {
+    category: "puppeteer",
+    color: '#dfdff0',
+    icon: "font-awesome/fa-code",
+    paletteLabel: 'Eval JS',
+    defaults: {
+      name: { value: "" },
+      puppeteer: { value: "", type: "puppeteer-js", required: true },
+      url: { value: "", required: true },
+      js: { value: "", required: true },
+      screenshot: { value: false }
+    },
+    inputs: 1,
+    outputs: 1,
+    inputLabels: "执行js代码",
+    label: function () {
+      return this.name || "Eval JS";
+    }
+  });
+</script>

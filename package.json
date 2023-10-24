@@ -1,0 +1,31 @@
+{
+  "name": "node-red-contrib-puppeteer-js",
+  "version": "1.0.0",
+  "description": "运行JavaScript代码并返回结果",
+  "main": "index.js",
+  "keywords": [
+    "node-red"
+  ],
+  "node-red": {
+    "nodes": {
+      "eval-js": "eval-js/eval-js.js",
+      "puppeteer-js": "puppeteer-js/puppeteer-js.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaonianzhentan/node-red-contrib-puppeteer-js.git"
+  },
+  "author": "shaonianzhentan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaonianzhentan/node-red-contrib-puppeteer-js/issues"
+  },
+  "homepage": "https://github.com/shaonianzhentan/node-red-contrib-puppeteer-js#readme",
+  "dependencies": {
+    "puppeteer-core": "^21.4.1"
+  }
+}

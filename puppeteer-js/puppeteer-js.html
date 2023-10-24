@@ -1,0 +1,31 @@
+<script type="text/html" data-template-name="puppeteer-js">
+  <div class="form-row">
+      <label for="node-config-input-name">名称</label>
+      <input type="text" id="node-config-input-name" placeholder="请输入节点名称">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-path">executablePath</label>
+    <input type="text" id="node-config-input-path" placeholder="请输入Chrome浏览器路径">
+  </div>
+  <div class="form-row">
+      <label for="node-input-config">配置</label>   
+      <input type="text" id="node-config-input-config" placeholder="更多配置">
+  </div>
+</script>
+
+<script type="text/javascript">
+  RED.nodes.registerType('puppeteer-js', {
+    category: 'config',
+    defaults: {
+      name: { value: "", required: true },
+      path: { value: "", required: true },
+      config: { value: "" }
+    },
+    label: function () {
+      return this.name;
+    },
+    oneditprepare: function () {
+      $("#node-config-input-config").typedInput({ type: "json", types: ["json"] })
+    }
+  });
+</script>
